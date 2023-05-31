@@ -42,6 +42,18 @@ const data = {
         ['They', 'together', 'searched', 'for', 'a long', 'time', 'and finally', 'found', 'the', 'little girl\'s', 'mom'],
         ['Mom', 'was', 'very', 'thankful', 'for', 'Xiao Ming\'s', 'help'],
         ['From', 'that day', 'on', 'Xiao Ming', 'and', 'the little girl', 'became', 'good friends']
+    ],
+    grammar: [
+        ['Subject-Verb-Object (SVO) structure: "Subject(小明) + Verb(是) + Object(一个学生)"'],
+        ['Usage of "在" for action in progress or location'],
+        ['Use of "在" to denote an action happening at a specific location'],
+        ['Usage of "一个" to indicate "a" or "an"'],
+        ['Direct and Indirect Object sentence structure'],
+        ['Usage of "找不到" to indicate inability to find something'],
+        ['Use of "别" for giving negative commands (Don\'t...)'],
+        ['Usage of "一起" to indicate an action done together and "终于" to indicate "finally"'],
+        ['Use of "很" before an adjective'],
+        ['Usage of "从...起" to indicate "from...on" and "成为" to denote "become"']
     ]
 }
 
@@ -67,8 +79,15 @@ data.chinese.forEach((sentence, i) => {
         sentenceElement.appendChild(document.createTextNode(' ')); // for spacing
     });
     
+    // Append a period at the end of each sentence.
+    const periodElement = document.createElement('span');
+    periodElement.textContent = '。';
+    sentenceElement.appendChild(periodElement);
+
     sentenceElement.addEventListener('click', () => {
-        translationPanel.textContent = `Eng: ${data.english[i].join(' ')}`;
+        translationPanel.innerHTML = `<strong>Eng:</strong> ${data.english[i].join(' ')}.
+        <br><br><br>
+        <strong>Grammar:</strong> ${data.grammar[i]}`;
     });
     
     storyPanel.appendChild(sentenceElement);
