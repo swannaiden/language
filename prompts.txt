@@ -123,3 +123,7 @@ The output should look something like:
 ```
 
 在一个小镇上，有一个小女孩爱读书。一天，她去了镇上的图书馆。她在那里找到了一本关于公主的故事书。小女孩很高兴，因为她喜欢公主的故事。她在图书馆里快乐地读了一整天。
+
+
+This website has good examples of interface for pinyin and translation
+http://chinesereadingpractice.com/2020/07/19/fable-washing-clothes/
