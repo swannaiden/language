@@ -1,0 +1,125 @@
+
+This one did not really work with GPT3 as can be seen here.
+
+Generate a compelling and interesting short story in Chinese, adhering to the given allowed characters, and revolving around the story topic. The story should consist of the specified number of sentences and should engage the reader effectively. Remeber to only use words in the allowed characters. 
+
+Parameters:
+
+Number of sentences: 10
+Allowed characters: 爱,八,爸爸,杯子,北京,本,不客气,不,菜,茶,吃,出租车,打电话,大,的,点,电脑,电视,电影,东西,都,读,对不起,多,多少,儿子,二,饭店,飞机,高兴,个,工作,狗,汉语,好,喝,和,很,后面,回,会,火车站,几,岁,家,叫,今天,九,开,看,看见,块,来,老师,冷,里,零,六,妈妈,吗,买,猫,没,没关系,米饭,名字,明天,哪儿,那,呢,能,你,你们,年,女儿,朋友,苹果,七,钱,前面,请,去,热,人,认识,日,三,商店,上,上午,少,什么,十,时候,是,书,谁,水,水果,睡觉,说话,四,他,她,他们,她们,太,天气,听,同学,我,我们,五,喜欢,下,下午,下雨,先生,现在,想,小,小姐,些,写,谢谢,星期,学生,学习,学校,一,衣服,医生,医院,椅子,有,月,在,再见,怎么,怎么样,这,中国,中午,住,桌子,字,昨天,做,坐
+
+Story Topic: girl in library
+
+Pleaes provide the story in the following format:
+
+Story：
+[[ story goes here ]]
+
+爱上图书馆的女孩子，八岁的小女孩，有着阔达的想象力，爸爸给她买了一个杯子和一本书，去了北京的那所图书馆。不客气的书本，菜谱的书，茶叶的书，谁也不知道她会看到些什么。出租车把她带进图书馆，她打电话给她的祖母，给她打招呼，表示她的到来，她的爸爸很大方，给她买了一大堆的书来读，电脑，电视，电影的书，都是排满架子的，她不知道要看什么。就拿起一本书，看着令人兴奋的东西，开始读起来，对不起，有多少个词不懂，可她读得多，知识也多。有时候她喜欢去火车站，打发时间，几岁了，进去饭店，也有她的飞机梦，乘坐飞机去认识一个朋友，她兴奋的和妈妈同读一本书，一起找苹果图片，给她的猫喝汉语水，多么的好！没有关系，叫什么名字，要买米饭，明天的什么，哪里的学校，说话的声音，睡觉的舒服，读古典文学，谁认识她，商店里的少，怎么去医院，桌子上的东西，今天的天气，这时候她有时候也会和同学一起去，聊天讨论，看问答和家人视频，买一块衣服，一点点小写字，向老师学习，谢谢问候，椅子上的书本，少年的星期几，时间重新开始，一个女孩在
+
+
+This one worked alright with GPT3 as can be seen here.
+
+You are a Chinese language tutor. You are about to have a conversation with a beginner Chinese student who is confused about the gramticaly structure of a given sentence. Please start by saying "Hi, I'm your tutor. How can I help you understand this sentence?"
+
+sentence : 一天他在图书馆看书
+
+Hi, I'm your tutor. How can I help you understand this sentence? "一天他在图书馆看书"?
+
+Why don't you need a measure word between yi and tian ?
+
+Good question! In Chinese, measure words are often used when talking about nouns. However, in this sentence, we are referring to a specific amount of time - "one day", so no measure word is necessary.
+
+Can you explain the role that zai plays in this sentence ?
+
+The particle "zai" is used here to indicate the location of an action. In this sentence, "zai" describes where the action of "looking at books" is taking place - the library.
+
+
+Absolutely, here is the revised prompt emphasizing the interesting and compelling aspect of the story and using the specified parameters for the example:
+
+---
+**Prompt**
+
+Convert the given piece of Chinese text into a Json file. The Json file should contain the following fields: "chinese", "pinyin", "english", "grammar"
+
+Please provide the story in the following format:
+
+"chinese": a list of lists of chinese words, where each list of words represents a sentence. Words may be a single character or multiple characters.
+"pinyin": a list of lists of pinyin, where each list of pinyin represents a sentence
+"english" : a list of lists of english words, where each word corresponds to the character in the same position in the "chinese" field
+"grammar" : a brief explanation of the grammar used in each sentence.
+
+For example given an input 
+
+你好，我是小明
+你好，我是玛丽
+
+The output should look something like:
+
+```json
+{
+    "chinese": [
+        ["你好","我","是","小","明"],
+        ["你好","我","是","玛","丽"]
+    ],
+    "pinyin": [
+        ["nǐ hǎo","wǒ","shì","xiǎo","míng"],
+        ["nǐ hǎo","wǒ","shì","mǎ","lì"]
+    ],
+    "english": [
+        ["hello","I","am","little","ming"],
+        ["hello","I","am","mary"]
+    ],
+    "grammar": [
+        ["Use of \"你好，我是...\" (nǐ hǎo, wǒ shì...) as a standard self-introduction in Chinese"],
+        ["Use of \"你好，我是...\" (nǐ hǎo, wǒ shì...) as a standard self-introduction in Chinese"]
+    ]
+}
+```
+
+
+---
+
+Convert the given piece of Chinese text into a Json file. The Json file should contain the following fields: "chinese", "pinyin", "english", "english_translation", "grammar"
+
+Please provide the story in the following format:
+
+"chinese": a list of lists of chinese words, where each list of words represents a sentence. Words may be a single character or multiple characters.
+"pinyin": a list of lists of pinyin, where each list of pinyin represents a sentence
+"english" : a list of lists of english words, where each word corresponds to the character in the same position in the "chinese" field
+"english_translation": a list of sentences, where each sentence is the translation of the corresponding "chinese" sentence
+"grammar" : a brief explanation of the grammar used in each sentence.
+
+For example given an input 
+
+你好，我是小明
+你好，我是玛丽
+
+The output should look something like:
+
+```json
+{
+    "chinese": [
+        ["你好","我","是","小","明"],
+        ["你好","我","是","玛","丽"]
+    ],
+    "pinyin": [
+        ["nǐ hǎo","wǒ","shì","xiǎo","míng"],
+        ["nǐ hǎo","wǒ","shì","mǎ","lì"]
+    ],
+    "english": [
+        ["hello","I","am","little","ming"],
+        ["hello","I","am","mary"]
+    ],
+    "english_translation": [
+        ["Hello, I am little Ming"],
+        ["Hello, I am Mary"]
+    ],
+    "grammar": [
+        ["Use of \"你好，我是...\" (nǐ hǎo, wǒ shì...) as a standard self-introduction in Chinese"],
+        ["Use of \"你好，我是...\" (nǐ hǎo, wǒ shì...) as a standard self-introduction in Chinese"]
+    ]
+}
+```
+
+在一个小镇上，有一个小女孩爱读书。一天，她去了镇上的图书馆。她在那里找到了一本关于公主的故事书。小女孩很高兴，因为她喜欢公主的故事。她在图书馆里快乐地读了一整天。
